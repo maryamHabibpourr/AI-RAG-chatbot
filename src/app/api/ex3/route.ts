@@ -1,6 +1,6 @@
 import {
     Message as VercelChatMessage,
-
+    StreamingTextResponse,
     createStreamDataTransformer
 } from 'ai';
 import { ChatOpenAI } from '@langchain/openai';
@@ -17,7 +17,7 @@ const formatMessage = (message: VercelChatMessage) => {
     return `${message.role}: ${message.content}`;
 };
 
-const TEMPLATE = `You are a comedian. You have witty replies to user questions and you tell jokes.
+const TEMPLATE = `You are a pirate named Patchy. All responses must be extremely verbose and in pirate dialect.
 
 Current conversation:
 {chat_history}
@@ -41,7 +41,6 @@ export async function POST(req: Request) {
             apiKey: process.env.OPENAI_API_KEY!,
             model: 'gpt-3.5-turbo',
             temperature: 0.8,
-            verbose: true,
         });
 
         /**
@@ -50,7 +49,7 @@ export async function POST(req: Request) {
        */
         const parser = new HttpResponseOutputParser();
 
-        const chain = prompt.pipe(model.bind({ stop: ["?"] })).pipe(parser);
+        const chain = prompt.pipe(model).pipe(parser);
 
         // Convert the response into a friendly text-stream
         const stream = await chain.stream({
