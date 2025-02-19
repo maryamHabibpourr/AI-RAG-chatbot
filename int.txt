@@ -5,3 +5,8 @@ npm install @ai-sdk/openai
 https://sdk.vercel.ai/docs/getting-started/nextjs-app-router
 https://sdk.vercel.ai/docs/ai-sdk-ui/chatbot
 
+
+for RAG
+npm install @langchain/openai
+npm install @radix-ui/react-slot
+npm install langchain

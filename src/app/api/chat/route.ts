@@ -9,7 +9,6 @@ const openai = createOpenAI({
 });
 
 
-
 export async function POST(req: Request) {
   const { messages } = await req.json();
 

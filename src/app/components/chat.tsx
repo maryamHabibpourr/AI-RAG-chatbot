@@ -6,7 +6,13 @@ import { useChat } from "@ai-sdk/react";
 import { useRef, useEffect } from "react";
 
 export function Chat() {
-  const { messages, input, handleInputChange, handleSubmit } = useChat();
+  const { messages, input, handleInputChange, handleSubmit } = useChat({
+    api: "api/chat",
+    onError: (e) => {
+      console.log(e);
+    },
+  });
+
   const chatParent = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
