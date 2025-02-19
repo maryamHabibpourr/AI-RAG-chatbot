@@ -1,0 +1,7 @@
+npm i ai openai
+npm install @ai-sdk/openai
+
+
+https://sdk.vercel.ai/docs/getting-started/nextjs-app-router
+https://sdk.vercel.ai/docs/ai-sdk-ui/chatbot
+
