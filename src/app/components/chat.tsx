@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useChat } from "@ai-sdk/react";
 import { useRef, useEffect } from "react";
+import ThemeSwitch from "@/components/ThemeSwitch";
 
 export function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat({
@@ -24,8 +25,9 @@ export function Chat() {
 
   return (
     <main className="flex flex-col w-full h-screen max-h-dvh bg-background">
-      <header className="p-4 border-b w-full max-w-3xl mx-auto">
+      <header className="p-4 border-b w-full max-w-3xl mx-auto flex gap-4 items-center justify-center">
         <h1 className="text-2xl font-bold">AI Chat</h1>
+        <ThemeSwitch />
       </header>
 
       <section className="p-4">

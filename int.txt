@@ -10,3 +10,7 @@ for RAG
 npm install @langchain/openai
 npm install @radix-ui/react-slot
 npm install langchain
+
+
+for dark mode
+npm install next-themes
